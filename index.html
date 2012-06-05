@@ -1,27 +1,27 @@
 <html>
-<head>
-	<title>Demo 2 : NicEdit Configuration</title>
-</head>
-<body>
+  <head>
+    <title>HTML TO MARKDOWN</title>
+  </head>
+  <body>
+    <!--
+      https://github.com/jColeChanged/html-to-markdown
+      http://nicedit.com/
+      -->
 
-<div id="sample">
-<script src="nicEdit.js" type="text/javascript"></script>
-<script src="to-markdown.js" type="text/javascript"></script>
-<script type="text/javascript">
-bkLib.onDomLoaded(function() {
-	edt = new nicEditor().panelInstance('area1');
-});
-</script>
+    <script src="nicEdit.js" type="text/javascript"></script>
+    <script src="to-markdown.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      bkLib.onDomLoaded(function() {
+        edt = new nicEditor().panelInstance('area1');
+      });
+    </script>
 
-<h4>Default (No Config Specified)</h4>
-<p>new nicEditor().panelInstance('area1');</p>
+    <textarea cols="100" style="height: 400px" id="area1"></textarea>
+    <button onclick="
+        document.getElementById('area2').value = toMarkdown(nicEditors.findEditor('area1').getContent())
+        ">cover</button>
+    <br/>
+    <textarea cols="100" style="height: 400px" id="area2"></textarea>
 
-<textarea cols="100" style="height: 400px" id="area1"></textarea>
-<button onclick="
-    document.getElementById('area2').value = toMarkdown(nicEditors.findEditor('area1').getContent())
-    ">cover</button>
-<br/>
-<textarea cols="100" style="height: 400px" id="area2"></textarea>
-
-</body>
+  </body>
 </html>
